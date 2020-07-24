@@ -1,11 +1,12 @@
-import React from 'react';
-import './App.css';
+import React, {useState} from "react";
+import "./App.css";
 
 function App() {
+  //const [employees];
+
   return (
-    <div className="App">
-        <p>hello </p>
-    </div>
+    <Navbar />
+    <Table />
   );
 }
 
