@@ -8,3 +8,10 @@ td {
   letter-spacing: 0.5px;
   font-family: Georgia, "Times New Roman", Times, serif;
 }
+
+button {
+    border: none;
+    background: none !important;
+    font-weight: bold;
+    font-family: Georgia, "Times New Roman", Times, serif;
+  }
