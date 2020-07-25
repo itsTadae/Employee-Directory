@@ -1,13 +1,13 @@
 import { useEffect, useContext } from "react";
-import { EmployeeContext } from "../components/EmployeeContext";
+import { EmployeeContext } from "../components/js/EmployeeContext";
 import axios from "axios";
-
+// useGet hook 
 export function useGet(url) {
   const {
     employees,
     fetchEmployee,
-    displayedEmployees,
     displayEmployee,
+    displayedEmployees,
   } = useContext(EmployeeContext);
 
   // useEffect to fetch employee data and replace lifecycle methods
@@ -24,8 +24,10 @@ export function useGet(url) {
       }
     }
     fetchEmployees();
-  }, []);
-
+  }, 
+  // populate array
+  []);
+  // function to sort by first name
   function sortName() {
     employees.sort(function (a, b) {
       if (a.name.first < b.name.first) {

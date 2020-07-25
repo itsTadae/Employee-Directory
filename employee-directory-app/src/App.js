@@ -1,7 +1,8 @@
 import React, { useState } from "react";
 import "./App.css";
-import Table from "./components/table.js";
-import { EmployeeContext } from "./components/EmployeeContext";
+import Table from "./components/js/table.js";
+import { EmployeeContext } from "./components/js/EmployeeContext";
+import Navbar from "./components/js/navbar"
 
 function App() {
   const [employees, fetchEmployee] = useState([]);
@@ -17,6 +18,7 @@ function App() {
           displayEmployee,
         }}
       >
+        <Navbar />
         <Table />
       </EmployeeContext.Provider>
     </div>
