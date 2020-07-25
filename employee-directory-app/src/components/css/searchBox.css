@@ -1,0 +1,16 @@
+.headerText {
+  letter-spacing: 3px;
+  font-size: 40px;
+  font-family: Georgia, "Times New Roman", Times, serif;
+  color: black;
+  font-style: oblique;
+}
+
+.searchField {
+  margin-top: 30px;
+}
+
+header {
+  padding: 5px;
+  background-color: rgb(245, 245, 245);
+}
