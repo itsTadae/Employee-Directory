@@ -1,7 +1,7 @@
 import { useEffect, useContext } from "react";
 import { EmployeeContext } from "../components/js/EmployeeContext";
 import axios from "axios";
-// useGet hook 
+// useGet hook
 export function useGet(url) {
   const {
     employees,
@@ -11,22 +11,24 @@ export function useGet(url) {
   } = useContext(EmployeeContext);
 
   // useEffect to fetch employee data and replace lifecycle methods
-  useEffect(() => {
-    async function fetchEmployees() {
-      try {
-        const response = await axios.get(url);
+  useEffect(
+    () => {
+      async function fetchEmployees() {
+        try {
+          const response = await axios.get(url);
 
-        fetchEmployee(response.data.results);
+          fetchEmployee(response.data.results);
 
-        displayEmployee(response.data.results);
-      } catch (err) {
-        console.log("Error with API:", err);
+          displayEmployee(response.data.results);
+        } catch (err) {
+          console.log("Error with API:", err);
+        }
       }
-    }
-    fetchEmployees();
-  }, 
-  // populate array
-  []);
+      fetchEmployees();
+    },
+    // populate array and prevent an endless cycle of employee tables
+    []
+  );
   // function to sort by first name
   function sortName() {
     employees.sort(function (a, b) {
@@ -38,9 +40,6 @@ export function useGet(url) {
     });
     displayEmployee([...employees]);
   }
-
-  
-  
 
   return { displayedEmployees, sortName };
 }
