@@ -1,4 +1,10 @@
-thead{
-    background-color: rgba(151, 148, 148, 0.473);
-    font-weight: bold;
+thead {
+  background-color: rgba(151, 148, 148, 0.473);
+  font-weight: bold;
+}
+
+td {
+  font-size: 16px;
+  letter-spacing: 0.5px;
+  font-family: Georgia, "Times New Roman", Times, serif;
 }

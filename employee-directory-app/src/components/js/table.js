@@ -2,7 +2,7 @@ import React, { useState, useContext } from "react";
 import "../css/table.css";
 import { EmployeeContext } from "./EmployeeContext.js";
 import Button from "./button.js";
-import { useGet } from "../../hooks/API.js"
+import { useGet } from "../../hooks/API.js";
 
 function Table() {
   // save state of our employee results
@@ -11,9 +11,9 @@ function Table() {
   const { sortName } = useGet(url);
 
   const { displayedEmployees } = useContext(EmployeeContext);
-
+  // create new table with our random employee results attached
   return (
-    <table>
+    <table class="striped">
       <thead>
         <tr>
           <td onClick={() => sortName("name")}>
@@ -28,7 +28,7 @@ function Table() {
       <tbody>
         {displayedEmployees.map((employee) => {
           return (
-            <tr> 
+            <tr>
               <td>{employee.name.first}</td>
               <td>{employee.name.last}</td>
               <td>{employee.gender}</td>
